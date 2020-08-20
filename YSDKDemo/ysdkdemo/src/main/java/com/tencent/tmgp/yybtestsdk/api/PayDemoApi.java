@@ -22,6 +22,8 @@ public class PayDemoApi {
 
     public static String execute(@IDemoApiType.SUBTYPE_PAY int subType,String extraParams) {
 
+//        System.out.println("UnityPlayerActivity PayDemoApi: " + subType + "\n" + extraParams); //4充值。联运游戏流程测试，元宝x1，确认支付
+
         switch (subType) {
             case IDemoApiType.PAY_OF_RECHARGE:
                 return recharge(extraParams);
@@ -44,6 +46,9 @@ public class PayDemoApi {
     }
 
     private static String recharge(String input) {
+
+        System.out.println("PayDemoApi.recharge: " + input); //1 1 1
+
         String[] paraArr = input.split(" ");
         if(paraArr.length > 0 && null != paraArr[0]){
             boolean isCanChange = true;
@@ -57,14 +62,15 @@ public class PayDemoApi {
                     e.printStackTrace();
                 }
             }
-            Activity activity = AppUtils.getCurActivity();
-            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
-            byte[] appResData = baos.toByteArray();
+//            Activity activity = AppUtils.getCurActivity();
+//            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//            byte[] appResData = baos.toByteArray();
+            byte[] appResData = null;
             String ysdkExt = "ysdkExt";
-            com.tencent.ysdk.api.YSDKApi.recharge(paraArr[0],paraArr[1],isCanChange,appResData,
-                    ysdkExt,YSDKDemoApi.sPayListener);
+            com.tencent.ysdk.api.YSDKApi.recharge(paraArr[0],paraArr[1],isCanChange,appResData,ysdkExt,YSDKDemoApi.sPayListener);
+            //com.tencent.ysdk.api.YSDKApi.recharge("1","1",false,null,"ysdkExt",YSDKDemoApi.sPayListener);
 
         }else{
             Log.e(YSDKDemoApi.TAG,"para is bad:"+ input);
@@ -76,10 +82,11 @@ public class PayDemoApi {
         String[] paraArr = input.split(" ");
         if(paraArr.length > 1 && null != paraArr[0]){
             Activity activity = AppUtils.getCurActivity();
-            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
-            byte[] appResData = baos.toByteArray();
+//            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//            byte[] appResData = baos.toByteArray();
+            byte[] appResData = null;
             String ysdkExt = "ysdkExt";
             com.tencent.ysdk.api.YSDKApi.buyGoods(paraArr[0],paraArr[1],appResData,ysdkExt,
                     YSDKDemoApi.sPayListener);
@@ -99,10 +106,11 @@ public class PayDemoApi {
             item.price = Integer.parseInt(paraArr[4]);
             item.num = Integer.parseInt(paraArr[5]);
             Activity activity = AppUtils.getCurActivity();
-            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
-            byte[] appResData = baos.toByteArray();
+//            Bitmap bmp = BitmapFactory.decodeResource(activity.getResources(), R.drawable.sample_yuanbao);
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//            byte[] appResData = baos.toByteArray();
+            byte[] appResData = null;
             String ysdkExt = "ysdkExt";
             String midasExt = "midasExt";
             com.tencent.ysdk.api.YSDKApi.buyGoods(false, paraArr[0],item, PayModule.MIDAS_APPKEY,

@@ -91,6 +91,11 @@ public class YSDKDemoApi {
             return;
         }
 
+        if (ret.platform == ePlatform.PLATFORM_ID_WX) {
+            Log.d(TAG,"登录成功，跳转到微信主界面");
+        }
+
+        /*
         //登录成功调用“启动特权”相关能力
         LaunchGiftDemoApi.autoShowLaunchGiftViewOnLaunch();
 
@@ -109,7 +114,7 @@ public class YSDKDemoApi {
             BaseModule module = ModuleManager.sModulesList.get(ModuleManager.FREE_LOGIN_MOUDLE);
             sShowView.showModule(module);
         }
-
+        */
     }
 
     public static void userLogout() {

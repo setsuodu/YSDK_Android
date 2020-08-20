@@ -31,8 +31,7 @@ public class SplashActivity extends Activity {
 		Log.e(LOG_TAG,"onCreate");
 		super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_layout);
 
         // TODO GAME 游戏需自行检测自身是否重复, 检测到重复的Activity则要把自己finish掉

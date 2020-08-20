@@ -34,7 +34,7 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
         Log.d(YSDKDemoApi.TAG, ret.getPayToken());
         Log.d(YSDKDemoApi.TAG, "ret.flag" + ret.flag);
         Log.d(YSDKDemoApi.TAG, ret.toString());
-        YSDKDemoApi.sShowView.hideProgressBar();
+//        YSDKDemoApi.sShowView.hideProgressBar();//取消转圈。
         YSDKApi.reportGameRoleInfo("zoneId", "zoneName", "roleId", "roleName", 9, 9, 9, null);
         switch (ret.flag) {
             case eFlag.Succ:
@@ -46,43 +46,43 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
                 break;
             // 游戏逻辑，对登录失败情况分别进行处理
             case eFlag.QQ_UserCancel:
-                YSDKDemoApi.sShowView.showToastTips("用户取消授权，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("用户取消授权，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.QQ_LoginFail:
-                YSDKDemoApi.sShowView.showToastTips("QQ登录失败，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("QQ登录失败，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.QQ_NetworkErr:
-                YSDKDemoApi.sShowView.showToastTips("QQ登录异常，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("QQ登录异常，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.QQ_NotInstall:
-                YSDKDemoApi.sShowView.showToastTips("手机未安装手Q，请安装后重试");
+//                YSDKDemoApi.sShowView.showToastTips("手机未安装手Q，请安装后重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.QQ_NotSupportApi:
-                YSDKDemoApi.sShowView.showToastTips("手机手Q版本太低，请升级后重试");
+//                YSDKDemoApi.sShowView.showToastTips("手机手Q版本太低，请升级后重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.WX_NotInstall:
-                YSDKDemoApi.sShowView.showToastTips("手机未安装微信，请安装后重试");
+//                YSDKDemoApi.sShowView.showToastTips("手机未安装微信，请安装后重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.WX_NotSupportApi:
-                YSDKDemoApi.sShowView.showToastTips("手机微信版本太低，请升级后重试");
+//                YSDKDemoApi.sShowView.showToastTips("手机微信版本太低，请升级后重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.WX_UserCancel:
-                YSDKDemoApi.sShowView.showToastTips("用户取消授权，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("用户取消授权，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.WX_UserDeny:
-                YSDKDemoApi.sShowView.showToastTips("用户拒绝了授权，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("用户拒绝了授权，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.WX_LoginFail:
-                YSDKDemoApi.sShowView.showToastTips("微信登录失败，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("微信登录失败，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.Login_TokenInvalid:

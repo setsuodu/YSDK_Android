@@ -243,6 +243,7 @@ public class MainActivity extends Activity implements IShowView {
                         Log.d(LOG_TAG,"QQ登录中~~~");
                     }
                 } else if ("微信登录".equals(seletedModule.name)) {
+                    Log.d(LOG_TAG,"点击微信登录");
                     if (ePlatform.WX == platform) {
                         // 如已登录直接进入相应模块视图
                         showModule = true;

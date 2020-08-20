@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">YSDKDemo</string>
     <string name="main_title">YSDKDemo</string>
     <string name="versionName">1.0.0</string>
+    <string name="btn1">初始化</string>
+    <string name="btn2">登录</string>
+    <string name="btn3">支付</string>
 </resources>

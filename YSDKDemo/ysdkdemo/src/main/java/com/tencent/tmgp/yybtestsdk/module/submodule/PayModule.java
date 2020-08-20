@@ -42,6 +42,7 @@ public class PayModule extends BaseModule {
                 "大区id 充值数额 充值数额是否可改，三个参数用空格分割",
                 "1 1 1"));
         payView.addView( "游戏币相关", aboutRecharge);
+
         // 道具直购相关
         ArrayList<YSDKDemoFunction> aboutBuyGoods = new ArrayList<YSDKDemoFunction>();
         aboutBuyGoods.add(new YSDKDemoFunction(
