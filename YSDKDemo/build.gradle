@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        maven { url './libs' }
+        maven {url "https://mirrors.tencent.com/nexus/repository/maven-public/"}
+        maven {url "https://mirrors.tencent.com/repository/maven/thirdparty/"}
+        maven {url "https://mirrors.tencent.com/repository/maven/thirdparty-snapshots/"}
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.3.2"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url './libs' }
+        maven {url "https://mirrors.tencent.com/nexus/repository/maven-public/"}
+        maven {url "https://mirrors.tencent.com/repository/maven/thirdparty/"}
+        maven {url "https://mirrors.tencent.com/repository/maven/thirdparty-snapshots/"}
+    }
+}
+ext {
+    minSdkVersionApiLevel = 14
+    targetSdkVersionApiLevel = 28 //todo:target 要升吗？
+
+    compileSdkVersion = 29
+    buildToolsVersion = "29.0.2"
+
+    versionCode = 1
+    versionName = "1.6.3"
+    demoPackageName = "com.tencent.tmgp.yybtestsdk"
+
+    EVN_JAVA_1_7 = JavaVersion.VERSION_1_7
+    EVN_JAVA_1_8 = JavaVersion.VERSION_1_8
+    EVN_JAVA = EVN_JAVA_1_7
+}

@@ -1,0 +1,3 @@
+include ':ysdk', ':resultinterface', ':sandboxbridge'
+include ':modulefilescan'
+include ':ysdkdemo'

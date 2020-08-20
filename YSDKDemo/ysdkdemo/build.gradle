@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersionApiLevel
+        targetSdkVersion rootProject.ext.targetSdkVersionApiLevel
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        applicationId rootProject.ext.demoPackageName
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.EVN_JAVA
+        targetCompatibility rootProject.ext.EVN_JAVA
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = false
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest {
+                srcFile 'src/main/AndroidManifest.xml'
+            }
+            java {
+                srcDir 'src/main/java'
+            }
+            res {
+                srcDir 'src/main/res'
+            }
+            assets {
+                srcDir 'assets'
+            }
+        }
+        test{
+            java.srcDirs = ['test']
+        }
+    }
+    packagingOptions {
+        exclude 'BeaconVersion.txt'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            ndk {
+                abiFilters 'armeabi-v7a'
+            }
+            proguardFiles.add(file('./../proguard-rules.pro'))
+        }
+
+        debug {
+            ndk {
+                abiFilters 'armeabi-v7a'
+            }
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('./../debug.keystore')
+        }
+
+        create("allRelease") {
+            storeFile file('./../debug.keystore')
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.json:json:20140107"
+    testImplementation 'org.robolectric:robolectric:4.2.1'
+    testImplementation "org.powermock:powermock-module-junit4:1.6.6"
+    testImplementation "org.powermock:powermock-module-junit4-rule:1.6.6"
+    testImplementation "org.powermock:powermock-api-mockito:1.6.6"
+    testImplementation "org.powermock:powermock-classloading-xstream:1.6.6"
+}
