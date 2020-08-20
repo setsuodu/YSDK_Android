@@ -7,7 +7,7 @@ buildscript {
         maven {url "https://mirrors.tencent.com/repository/maven/thirdparty-snapshots/"}
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:3.3.2"
+        classpath 'com.android.tools.build:gradle:3.5.2'
     }
 }
 
