@@ -53,36 +53,37 @@ public class MainActivity extends Activity {
         // TODO:上线前需要关闭
         YSDKApi.setAntiAddictLogEnable(true);
 
-//        YSDKApi.handleIntent(this.getIntent());
+        YSDKApi.handleIntent(this.getIntent());
 
-//        Button btn = findViewById(R.id.button);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(com.seol.demo.MainActivity.this,"初始化",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        Button btn2 = findViewById(R.id.button2);
-//        btn2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(com.seol.demo.MainActivity.this,"登录",Toast.LENGTH_SHORT).show();
-//
-////                ePlatform platform = ModuleUtils.getPlatform();
-//                loginByType(ePlatform.WX);
-//            }
-//        });
-//
-//        Button btn3 = findViewById(R.id.button3);
-//        btn3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(com.seol.demo.MainActivity.this,"支付",Toast.LENGTH_SHORT).show();
-//
-//                com.tencent.ysdk.api.YSDKApi.recharge("1","1",false,null,"ysdkExt",YSDKDemoApi.sPayListener);
-//            }
-//        });
+        Button btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YSDKApi.logout();
+//                Toast.makeText(com.seol.demo.MainActivity.this,"登出",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btn2 = findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(com.seol.demo.MainActivity.this,"登录",Toast.LENGTH_SHORT).show();
+
+//                ePlatform platform = ModuleUtils.getPlatform();
+                loginByType(ePlatform.WX);
+            }
+        });
+
+        Button btn3 = findViewById(R.id.button3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(com.seol.demo.MainActivity.this,"支付",Toast.LENGTH_SHORT).show();
+
+                com.tencent.ysdk.api.YSDKApi.recharge("1","1",false,null,"ysdkExt",YSDKDemoApi.sPayListener);
+            }
+        });
     }
 
     @Override
