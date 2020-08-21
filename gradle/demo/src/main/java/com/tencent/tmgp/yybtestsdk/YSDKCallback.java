@@ -42,7 +42,6 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
             case eFlag.Succ:
                 System.out.println("登录成功");
                 Toast.makeText(YSDKDemoApi.sActivity,"登录成功", Toast.LENGTH_SHORT).show();
-
                 YSDKDemoApi.userLoginSuc();
                 if (ret.getLoginType() != UserLoginRet.LOGIN_TYPE_TIMER) {
                     // 定时登录，不需要设置防沉迷统计开始
@@ -140,6 +139,9 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
         Log.d(YSDKDemoApi.TAG, "msg:" + ret.msg);
         Log.d(YSDKDemoApi.TAG, "platform:" + ret.platform);
         AppUtils.updateLoginPlatform(ret.platform);
+
+        System.out.println("唤醒通知: " + ret.flag);
+
         // TODO GAME 游戏需要在这里增加处理异账号的逻辑
         if (eFlag.Wakeup_YSDKLogining == ret.flag) {
             // 用拉起的账号登录，登录结果在OnLoginNotify()中回调
@@ -185,6 +187,7 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
 
         // 发送结果到结果展示界面
 //        YSDKDemoApi.sShowView.showResult(builder.toString(), YSDKDemoApi.sLastFunction);
+        System.out.println("发送结果到结果展示界面: " + builder.toString());
     }
 
     @Override
@@ -204,11 +207,18 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
     @Override
     public void OnPayNotify(PayRet ret) {
         Log.d(YSDKDemoApi.TAG, ret.toString());
+
+        System.out.println("支付回调: " + ret.payState);
+
         if (PayRet.RET_SUCC == ret.ret) {
             //支付流程成功
             switch (ret.payState) {
                 //支付成功
                 case PayRet.PAYSTATE_PAYSUCC:
+                    System.out.println("用户支付成功，支付金额" + ret.realSaveNum + ";" +
+                                    "使用渠道：" + ret.payChannel + ";" +
+                                    "发货状态：" + ret.provideState + ";" +
+                                    "业务类型：" + ret.extendInfo + ";建议查询余额：" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult(
 //                            "用户支付成功，支付金额" + ret.realSaveNum + ";" +
 //                                    "使用渠道：" + ret.payChannel + ";" +
@@ -218,36 +228,43 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
                     break;
                 //取消支付
                 case PayRet.PAYSTATE_PAYCANCEL:
+                    System.out.println("用户取消支付：" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
                 //支付结果未知
                 case PayRet.PAYSTATE_PAYUNKOWN:
+                    System.out.println("用户支付结果未知，建议查询余额：" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("用户支付结果未知，建议查询余额：" + ret.toString(),
 //                            YSDKDemoApi.sLastFunction);
                     break;
                 //支付失败
                 case PayRet.PAYSTATE_PAYERROR:
+                    System.out.println("支付异常" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
             }
         } else {
             switch (ret.flag) {
                 case eFlag.Login_TokenInvalid:
+                    System.out.println("登录态过期，请重新登录：" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("登录态过期，请重新登录：" + ret.toString(),
 //                            YSDKDemoApi.sLastFunction);
                     YSDKDemoApi.userLogout();
                     break;
                 case eFlag.Pay_User_Cancle:
                     //用户取消支付
+                    System.out.println("用户取消支付：" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(),
 //                            YSDKDemoApi.sLastFunction);
                     break;
                 case eFlag.Pay_Param_Error:
+                    System.out.println("支付失败，参数错误" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("支付失败，参数错误" + ret.toString(),
 //                            YSDKDemoApi.sLastFunction);
                     break;
                 case eFlag.Error:
                 default:
+                    System.out.println("支付异常" + ret.toString());
 //                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
             }

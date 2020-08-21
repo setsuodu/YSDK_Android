@@ -27,7 +27,6 @@ apply plugin: 'com.android.application'
 
 
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

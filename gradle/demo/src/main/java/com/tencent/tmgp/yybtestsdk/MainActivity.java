@@ -133,6 +133,14 @@ public class MainActivity extends UnityPlayerActivity {
 //        Toast.makeText(MainActivity.this,"登录", Toast.LENGTH_SHORT).show();
     }
 
+    public void Logout() {
+        System.out.println("UnityPlayerActivity Logout");
+        UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Logout");
+
+        YSDKApi.logout();
+        Toast.makeText(MainActivity.this,"登出成功", Toast.LENGTH_SHORT).show();
+    }
+
     public void Pay() {
         System.out.println("UnityPlayerActivity Pay");
         UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Pay");

@@ -110,7 +110,7 @@ public class YSDKDemoApi {
         YSDKApi.logout();
 //        sShowView.hideModule();
 //        sShowView.resetMainView();
-
+        //登出没有回调，把要做到事情都在这里同步处理
     }
 
     public static void choseUserToLogin() {
