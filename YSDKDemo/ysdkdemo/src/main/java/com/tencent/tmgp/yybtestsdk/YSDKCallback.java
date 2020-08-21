@@ -164,7 +164,7 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
         Log.d(YSDKDemoApi.TAG, "OnRelationNotify" + builder.toString());
 
         // 发送结果到结果展示界面
-        YSDKDemoApi.sShowView.showResult(builder.toString(), YSDKDemoApi.sLastFunction);
+//        YSDKDemoApi.sShowView.showResult(builder.toString(), YSDKDemoApi.sLastFunction);
     }
 
     @Override
@@ -189,46 +189,46 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
             switch (ret.payState) {
                 //支付成功
                 case PayRet.PAYSTATE_PAYSUCC:
-                    YSDKDemoApi.sShowView.showResult(
-                            "用户支付成功，支付金额" + ret.realSaveNum + ";" +
-                                    "使用渠道：" + ret.payChannel + ";" +
-                                    "发货状态：" + ret.provideState + ";" +
-                                    "业务类型：" + ret.extendInfo + ";建议查询余额：" + ret.toString(),
-                            YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult(
+//                            "用户支付成功，支付金额" + ret.realSaveNum + ";" +
+//                                    "使用渠道：" + ret.payChannel + ";" +
+//                                    "发货状态：" + ret.provideState + ";" +
+//                                    "业务类型：" + ret.extendInfo + ";建议查询余额：" + ret.toString(),
+//                            YSDKDemoApi.sLastFunction);
                     break;
                 //取消支付
                 case PayRet.PAYSTATE_PAYCANCEL:
-                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(), YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
                 //支付结果未知
                 case PayRet.PAYSTATE_PAYUNKOWN:
-                    YSDKDemoApi.sShowView.showResult("用户支付结果未知，建议查询余额：" + ret.toString(),
-                            YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("用户支付结果未知，建议查询余额：" + ret.toString(),
+//                            YSDKDemoApi.sLastFunction);
                     break;
                 //支付失败
                 case PayRet.PAYSTATE_PAYERROR:
-                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
             }
         } else {
             switch (ret.flag) {
                 case eFlag.Login_TokenInvalid:
-                    YSDKDemoApi.sShowView.showResult("登录态过期，请重新登录：" + ret.toString(),
-                            YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("登录态过期，请重新登录：" + ret.toString(),
+//                            YSDKDemoApi.sLastFunction);
                     YSDKDemoApi.userLogout();
                     break;
                 case eFlag.Pay_User_Cancle:
                     //用户取消支付
-                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(),
-                            YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("用户取消支付：" + ret.toString(),
+//                            YSDKDemoApi.sLastFunction);
                     break;
                 case eFlag.Pay_Param_Error:
-                    YSDKDemoApi.sShowView.showResult("支付失败，参数错误" + ret.toString(),
-                            YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("支付失败，参数错误" + ret.toString(),
+//                            YSDKDemoApi.sLastFunction);
                     break;
                 case eFlag.Error:
                 default:
-                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
+//                    YSDKDemoApi.sShowView.showResult("支付异常" + ret.toString(), YSDKDemoApi.sLastFunction);
                     break;
             }
         }

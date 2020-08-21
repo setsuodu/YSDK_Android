@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.tencent.tmgp.yybtestsdk.AppUtils;
 import com.tencent.tmgp.yybtestsdk.IShowView;
-import com.tencent.tmgp.yybtestsdk.module.YSDKDemoFunction;
+//import com.tencent.tmgp.yybtestsdk.module.YSDKDemoFunction;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.framework.common.BaseRet;
 import com.tencent.ysdk.framework.common.ePlatform;
@@ -45,8 +45,8 @@ public class YSDKDemoApi {
 //                return IconDemoApi.execute(subType,extraParams);
 //            case IDemoApiType.TYPE_LAUNCH_GIFT:
 //                return LaunchGiftDemoApi.execute(subType,extraParams);
-            case IDemoApiType.TYPE_MODULE_INVOKE:
-                return ModuleInvokeHelper.execute(subType);
+//            case IDemoApiType.TYPE_MODULE_INVOKE:
+//                return ModuleInvokeHelper.execute(subType);
             default:
                 throw new IllegalArgumentException("not support type:" + type);
         }
@@ -64,7 +64,7 @@ public class YSDKDemoApi {
 
     //这两个只是demo里用来展示相关调用结果,无实际意义
     public static IShowView sShowView;
-    public static YSDKDemoFunction sLastFunction;
+//    public static YSDKDemoFunction sLastFunction;
     public static Activity sActivity;
 
     public static void userLoginSuc() {
