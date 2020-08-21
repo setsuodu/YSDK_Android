@@ -15,6 +15,9 @@ import com.tencent.tmgp.yybtestsdk.api.YSDKDemoApi;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.framework.common.ePlatform;
 
+//import com.unity3d.player.UnityPlayer;
+//import com.unity3d.player.UnityPlayerActivity;
+
 public class MainActivity extends Activity {
 
 //    public ProgressDialog mAutoLoginWaitingDlg;
@@ -27,7 +30,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         System.out.println("UnityPlayerActivity onCreate");
 
-        AppUtils.updateActivity(this);
+//        AppUtils.updateActivity(this);
         YSDKCallback callback = new YSDKCallback();
         YSDKDemoApi.sBugylyListener = callback;
         YSDKDemoApi.sUserListener = callback;
@@ -52,34 +55,34 @@ public class MainActivity extends Activity {
 
 //        YSDKApi.handleIntent(this.getIntent());
 
-        Button btn = findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(com.seol.demo.MainActivity.this,"初始化",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Button btn2 = findViewById(R.id.button2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(com.seol.demo.MainActivity.this,"登录",Toast.LENGTH_SHORT).show();
-
-//                ePlatform platform = ModuleUtils.getPlatform();
-                loginByType(ePlatform.WX);
-            }
-        });
-
-        Button btn3 = findViewById(R.id.button3);
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(com.seol.demo.MainActivity.this,"支付",Toast.LENGTH_SHORT).show();
-
-                com.tencent.ysdk.api.YSDKApi.recharge("1","1",false,null,"ysdkExt",YSDKDemoApi.sPayListener);
-            }
-        });
+//        Button btn = findViewById(R.id.button);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(com.seol.demo.MainActivity.this,"初始化",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        Button btn2 = findViewById(R.id.button2);
+//        btn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(com.seol.demo.MainActivity.this,"登录",Toast.LENGTH_SHORT).show();
+//
+////                ePlatform platform = ModuleUtils.getPlatform();
+//                loginByType(ePlatform.WX);
+//            }
+//        });
+//
+//        Button btn3 = findViewById(R.id.button3);
+//        btn3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(com.seol.demo.MainActivity.this,"支付",Toast.LENGTH_SHORT).show();
+//
+//                com.tencent.ysdk.api.YSDKApi.recharge("1","1",false,null,"ysdkExt",YSDKDemoApi.sPayListener);
+//            }
+//        });
     }
 
     @Override
@@ -152,4 +155,23 @@ public class MainActivity extends Activity {
         YSDKApi.login(platform);
     }
 
+//    public void Back() {
+//        System.out.println("UnityPlayerActivity Back");
+//        UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Back");
+//    }
+//
+//    public void Init() {
+//        System.out.println("UnityPlayerActivity Init");
+//        UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Init");
+//    }
+//
+//    public void Login() {
+//        System.out.println("UnityPlayerActivity Login");
+//        UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Login");
+//    }
+//
+//    public void Pay() {
+//        System.out.println("UnityPlayerActivity Pay");
+//        UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Pay");
+//    }
 }

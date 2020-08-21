@@ -63,7 +63,7 @@ public class YSDKDemoApi {
 
 
     //这两个只是demo里用来展示相关调用结果,无实际意义
-    public static IShowView sShowView;
+//    public static IShowView sShowView;
 //    public static YSDKDemoFunction sLastFunction;
     public static Activity sActivity;
 
@@ -74,7 +74,7 @@ public class YSDKDemoApi {
         Log.d(TAG,"platform: " + ret.platform);
 
         if (ret.ret != BaseRet.RET_SUCC) {
-            sShowView.showToastTips( "UserLogin error!!!");
+//            sShowView.showToastTips( "UserLogin error!!!");
             Log.d(TAG,"UserLogin error!!!");
             userLogout();
             return;
@@ -108,8 +108,8 @@ public class YSDKDemoApi {
 
     public static void userLogout() {
         YSDKApi.logout();
-        sShowView.hideModule();
-        sShowView.resetMainView();
+//        sShowView.hideModule();
+//        sShowView.resetMainView();
 
     }
 
@@ -124,7 +124,7 @@ public class YSDKDemoApi {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int whichButton) {
-                                sShowView.showToastTips("选择使用本地账号");
+//                                sShowView.showToastTips("选择使用本地账号");
                                 if (!YSDKApi.switchUser(false)) {
                                         userLogout();
                                     }
@@ -134,7 +134,7 @@ public class YSDKDemoApi {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int whichButton) {
-                                sShowView.showToastTips("选择使用拉起账号");
+//                                sShowView.showToastTips("选择使用拉起账号");
                                     if (!YSDKApi.switchUser(true)) {
                                         userLoginSuc();
                                     }

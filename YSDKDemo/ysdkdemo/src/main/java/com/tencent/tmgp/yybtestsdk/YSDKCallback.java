@@ -86,12 +86,12 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.Login_TokenInvalid:
-                YSDKDemoApi.sShowView.showToastTips("您尚未登录或者之前的登录已过期，请重试");
+//                YSDKDemoApi.sShowView.showToastTips("您尚未登录或者之前的登录已过期，请重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.Login_NotRegisterRealName:
                 // 显示登录界面
-                YSDKDemoApi.sShowView.showToastTips("您的账号没有进行实名认证，请实名认证后重试");
+//                YSDKDemoApi.sShowView.showToastTips("您的账号没有进行实名认证，请实名认证后重试");
                 YSDKDemoApi.userLogout();
                 break;
 //            case eFlag.Login_Free_Login_Auth_Failed:
@@ -100,11 +100,11 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
 //                break;
             case eFlag.Login_NeedRegisterRealName:
                 // 显示登录页面
-                YSDKDemoApi.sShowView.showToastTips("您的账号没有进行实名认证，请完成实名认证后重试");
+//                YSDKDemoApi.sShowView.showToastTips("您的账号没有进行实名认证，请完成实名认证后重试");
                 YSDKDemoApi.userLogout();
                 break;
             case eFlag.Login_Free_Login_Auth_Failed:
-                YSDKDemoApi.sShowView.showToastTips("免登录校验失败，请重启重试");
+//                YSDKDemoApi.sShowView.showToastTips("免登录校验失败，请重启重试");
                 YSDKDemoApi.userLogout();
                 break;
             default:
@@ -271,7 +271,7 @@ public class YSDKCallback implements UserListener, BuglyListener, PayListener, A
 
     @Override
     public void onWindowClose() {
-        YSDKDemoApi.sShowView.showToastTips("请重新登录游戏");
+//        YSDKDemoApi.sShowView.showToastTips("请重新登录游戏");
     }
 }
 
