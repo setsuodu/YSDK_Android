@@ -47,47 +47,47 @@ public class ListViewAdapter extends BaseAdapter {
 
         ViewHolder holder;
         View view = convertView;
-        if (view == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.gridview_item, null);
-            holder = new ViewHolder();
-            TextView itemText = view.findViewById(R.id.item_txt);
-            holder.name = itemText;
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
+//        if (view == null) {
+//            view = LayoutInflater.from(mContext).inflate(R.layout.gridview_item, null);
+//            holder = new ViewHolder();
+//            TextView itemText = view.findViewById(R.id.item_txt);
+//            holder.name = itemText;
+//            view.setTag(holder);
+//        } else {
+//            holder = (ViewHolder) view.getTag();
+//        }
 
-        String item = getItem(position).name;
-        ePlatform tempPlat = ModuleUtils.getPlatform();
-        if (TextUtils.isEmpty(item)) {
-            return null;
-        }
-        if (ePlatform.QQ == tempPlat) {
-            if (item.equals("微信登录") || item.equals("游客登录")) {
-                view.getBackground().setAlpha(60);
-                holder.name.setTextColor(0x60000000);
-            }
-        } else if (ePlatform.WX == tempPlat) {
-            if (item.equals("QQ登录") || item.equals("游客登录")) {
-                view.getBackground().setAlpha(60);
-                holder.name.setTextColor(0x60000000);
-            }
-        } else if (ePlatform.Guest == tempPlat) {
-            if (item.equals("QQ登录") || item.equals("微信登录")) {
-                view.getBackground().setAlpha(60);
-                holder.name.setTextColor(0x60000000);
-            }
-        } else {
-            if (item.equals("支付模块")) {
-                view.getBackground().setAlpha(60);
-                holder.name.setTextColor(0x60000000);
-            } else {
-                view.getBackground().setAlpha(255);
-                holder.name.setTextColor(0xff000000);
-            }
-        }
+//        String item = getItem(position).name;
+//        ePlatform tempPlat = ModuleUtils.getPlatform();
+//        if (TextUtils.isEmpty(item)) {
+//            return null;
+//        }
+//        if (ePlatform.QQ == tempPlat) {
+//            if (item.equals("微信登录") || item.equals("游客登录")) {
+//                view.getBackground().setAlpha(60);
+//                holder.name.setTextColor(0x60000000);
+//            }
+//        } else if (ePlatform.WX == tempPlat) {
+//            if (item.equals("QQ登录") || item.equals("游客登录")) {
+//                view.getBackground().setAlpha(60);
+//                holder.name.setTextColor(0x60000000);
+//            }
+//        } else if (ePlatform.Guest == tempPlat) {
+//            if (item.equals("QQ登录") || item.equals("微信登录")) {
+//                view.getBackground().setAlpha(60);
+//                holder.name.setTextColor(0x60000000);
+//            }
+//        } else {
+//            if (item.equals("支付模块")) {
+//                view.getBackground().setAlpha(60);
+//                holder.name.setTextColor(0x60000000);
+//            } else {
+//                view.getBackground().setAlpha(255);
+//                holder.name.setTextColor(0xff000000);
+//            }
+//        }
 
-        holder.name.setText(item);
+//        holder.name.setText(item);
         return view;
     }
 }

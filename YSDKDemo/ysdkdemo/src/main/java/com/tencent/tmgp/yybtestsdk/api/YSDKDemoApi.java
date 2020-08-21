@@ -188,32 +188,32 @@ public class YSDKDemoApi {
             case AntiAddictRet.TYPE_OPEN_URL:
                 if (!mAntiAddictExecuteState) {
                     mAntiAddictExecuteState = true;
-                    View popwindowView = View.inflate(sActivity, R.layout.pop_window_web_layout, null);
-                    WebView webView = popwindowView.findViewById(R.id.pop_window_webview);
-                    Button closeButton = popwindowView.findViewById(R.id.pop_window_close);
+//                    View popwindowView = View.inflate(sActivity, R.layout.pop_window_web_layout, null);
+//                    WebView webView = popwindowView.findViewById(R.id.pop_window_webview);
+//                    Button closeButton = popwindowView.findViewById(R.id.pop_window_close);
 
-                    WebSettings settings= webView.getSettings();
-                    settings.setJavaScriptEnabled(true);
-                    webView.setWebViewClient(new WebViewClient());
-                    webView.loadUrl(ret.url);
-
-                    final PopupWindow popupWindow = new PopupWindow(popwindowView, 1000, 1000);
-                    popupWindow.setTouchable(true);
-                    popupWindow.setOutsideTouchable(false);
-                    popupWindow.setBackgroundDrawable(new BitmapDrawable());
-
-                    closeButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (modal == 1) {
-                                userLogout();
-                            }
-                            popupWindow.dismiss();
-                            changeExecuteState(false);
-                        }
-                    });
-
-                    popupWindow.showAtLocation(popwindowView, Gravity.CENTER, 0, 0);
+//                    WebSettings settings= webView.getSettings();
+//                    settings.setJavaScriptEnabled(true);
+//                    webView.setWebViewClient(new WebViewClient());
+//                    webView.loadUrl(ret.url);
+//
+//                    final PopupWindow popupWindow = new PopupWindow(popwindowView, 1000, 1000);
+//                    popupWindow.setTouchable(true);
+//                    popupWindow.setOutsideTouchable(false);
+//                    popupWindow.setBackgroundDrawable(new BitmapDrawable());
+//
+//                    closeButton.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            if (modal == 1) {
+//                                userLogout();
+//                            }
+//                            popupWindow.dismiss();
+//                            changeExecuteState(false);
+//                        }
+//                    });
+//
+//                    popupWindow.showAtLocation(popwindowView, Gravity.CENTER, 0, 0);
                     // 已执行指令
                     YSDKApi.reportAntiAddictExecute(ret, System.currentTimeMillis());
                 }

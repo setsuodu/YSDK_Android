@@ -22,12 +22,12 @@ public class ResultView {
      */
     public void addView(String blockTitle, String content) {
         LayoutInflater inflater = LayoutInflater.from(AppUtils.getCurActivity());
-        LinearLayout block = (LinearLayout) inflater.inflate(R.layout.layout_result_display, null);
-        TextView title = block.findViewById(R.id.tv_result_view_title);
-        title.setText(blockTitle + ":");
-
-        TextView contentText = block.findViewById(R.id.tv_result_view_content);
-        contentText.setText(content);
-        parentView.addView(block);
+//        LinearLayout block = (LinearLayout) inflater.inflate(R.layout.layout_result_display, null);
+//        TextView title = block.findViewById(R.id.tv_result_view_title);
+//        title.setText(blockTitle + ":");
+//
+//        TextView contentText = block.findViewById(R.id.tv_result_view_content);
+//        contentText.setText(content);
+//        parentView.addView(block);
     }
 }
