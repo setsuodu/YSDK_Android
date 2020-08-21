@@ -2,13 +2,13 @@ package com.tencent.tmgp.yybtestsdk.module;
 
 import android.util.SparseArray;
 
-import com.tencent.tmgp.yybtestsdk.module.submodule.FreeLoginModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.GuestModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.LaunchGiftModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.OthersFunction;
-import com.tencent.tmgp.yybtestsdk.module.submodule.QQModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.ShareModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.WXModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.FreeLoginModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.GuestModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.LaunchGiftModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.OthersFunction;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.QQModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.ShareModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.WXModule;
 
 public class ModuleManager {
 
@@ -29,14 +29,14 @@ public class ModuleManager {
 	static {
 		// 添加模块
 		sModulesList = new SparseArray<>();
-		sModulesList.append(QQ_MODULE,new QQModule());
-		sModulesList.append(WX_MODULE,new WXModule());
-		sModulesList.append(GUEST_MODULE,new GuestModule());
-		sModulesList.append(OTHERS_MODULE,new OthersFunction());
-		sModulesList.append(SHARE_MODULE,new ShareModule());
-		sModulesList.append(LAUNCH_GIFT_MODULE,new LaunchGiftModule());
+//		sModulesList.append(QQ_MODULE,new QQModule());
+//		sModulesList.append(WX_MODULE,new WXModule());
+//		sModulesList.append(GUEST_MODULE,new GuestModule());
+//		sModulesList.append(OTHERS_MODULE,new OthersFunction());
+//		sModulesList.append(SHARE_MODULE,new ShareModule());
+//		sModulesList.append(LAUNCH_GIFT_MODULE,new LaunchGiftModule());
 //		sModulesList.append(ICON_MODULE,new IconModule());
-		sModulesList.append(FREE_LOGIN_MOUDLE,new FreeLoginModule());
+//		sModulesList.append(FREE_LOGIN_MOUDLE,new FreeLoginModule());
 	}
 
 

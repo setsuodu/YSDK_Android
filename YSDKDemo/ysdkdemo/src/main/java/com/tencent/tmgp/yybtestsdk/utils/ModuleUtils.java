@@ -1,9 +1,9 @@
 package com.tencent.tmgp.yybtestsdk.utils;
 
 import com.tencent.tmgp.yybtestsdk.module.BaseModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.IconModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.LaunchGiftModule;
-import com.tencent.tmgp.yybtestsdk.module.submodule.PayModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.IconModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.LaunchGiftModule;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.PayModule;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.framework.common.eFlag;
 import com.tencent.ysdk.framework.common.ePlatform;
@@ -15,7 +15,7 @@ public class ModuleUtils {
         UserLoginRet ret = new UserLoginRet();
         YSDKApi.getLoginRecord(ret);
         if (eFlag.Succ == ret.flag) {
-            return new IconModule();
+//            return new IconModule();
         }
 
         return null;
@@ -26,7 +26,7 @@ public class ModuleUtils {
         UserLoginRet ret = new UserLoginRet();
         YSDKApi.getLoginRecord(ret);
         if (eFlag.Succ == ret.flag) {
-            return new PayModule();
+//            return new PayModule();
         }
 
         return null;
@@ -35,7 +35,7 @@ public class ModuleUtils {
         UserLoginRet ret = new UserLoginRet();
         YSDKApi.getLoginRecord(ret);
         if (eFlag.Succ == ret.flag) {
-            return new LaunchGiftModule();
+//            return new LaunchGiftModule();
         }
 
         return null;

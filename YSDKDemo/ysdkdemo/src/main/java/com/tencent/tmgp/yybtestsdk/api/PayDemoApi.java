@@ -6,8 +6,8 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.tencent.tmgp.yybtestsdk.AppUtils;
-import com.tencent.tmgp.yybtestsdk.R;
-import com.tencent.tmgp.yybtestsdk.module.submodule.PayModule;
+//import com.tencent.tmgp.yybtestsdk.R;
+//import com.tencent.tmgp.yybtestsdk.module.submodule.PayModule;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.module.pay.PayItem;
 
@@ -113,8 +113,8 @@ public class PayDemoApi {
             byte[] appResData = null;
             String ysdkExt = "ysdkExt";
             String midasExt = "midasExt";
-            com.tencent.ysdk.api.YSDKApi.buyGoods(false, paraArr[0],item, PayModule.MIDAS_APPKEY,
-                    appResData,midasExt,ysdkExt,YSDKDemoApi.sPayListener);
+//            com.tencent.ysdk.api.YSDKApi.buyGoods(false, paraArr[0],item, PayModule.MIDAS_APPKEY,
+//                    appResData,midasExt,ysdkExt,YSDKDemoApi.sPayListener);
         }else{
             Log.e(YSDKDemoApi.TAG,"para is bad:"+ input);
         }
