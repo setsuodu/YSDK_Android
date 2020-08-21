@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-//import androidx.appcompat.app.AppCompatActivity;
-
 import com.tencent.tmgp.yybtestsdk.AppUtils;
 import com.tencent.tmgp.yybtestsdk.R;
 import com.tencent.tmgp.yybtestsdk.YSDKCallback;
@@ -21,6 +19,7 @@ public class MainActivity extends Activity {
 
 //    public ProgressDialog mAutoLoginWaitingDlg;
     public static final String LOG_TAG = YSDKDemoApi.TAG;
+    private static Activity mActivity = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,7 @@ public class MainActivity extends Activity {
 
 //        YSDKDemoApi.sShowView = this;
         YSDKDemoApi.sActivity = this;
+        mActivity = this;
 
 //        // TODO GAME YSDK初始化
         YSDKApi.onCreate(this);

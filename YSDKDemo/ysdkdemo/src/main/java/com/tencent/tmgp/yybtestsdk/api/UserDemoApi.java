@@ -2,7 +2,7 @@ package com.tencent.tmgp.yybtestsdk.api;
 
 import android.util.Log;
 
-import com.tencent.tmgp.yybtestsdk.MainActivity;
+//import com.tencent.tmgp.yybtestsdk.MainActivity;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.framework.common.ePlatform;
 import com.tencent.ysdk.module.user.UserLoginRet;
@@ -52,7 +52,7 @@ public class UserDemoApi {
         int platform;
         platform = com.tencent.ysdk.api.YSDKApi.getLoginRecord(ret);
 
-        Log.d(MainActivity.LOG_TAG, "ret:" + ret.toString());
+//        Log.d(MainActivity.LOG_TAG, "ret:" + ret.toString());
         boolean isSupportPlatform = platform == ePlatform.PLATFORM_ID_QQ ||
                 platform == ePlatform.PLATFORM_ID_WX;
         StringBuilder resultBuilder = new StringBuilder();
