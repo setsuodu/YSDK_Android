@@ -3,21 +3,10 @@ package com.tencent.tmgp.yybtestsdk.api;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.PopupWindow;
 
 import com.tencent.tmgp.yybtestsdk.AppUtils;
 import com.tencent.tmgp.yybtestsdk.IShowView;
-import com.tencent.tmgp.yybtestsdk.R;
-import com.tencent.tmgp.yybtestsdk.module.BaseModule;
-import com.tencent.tmgp.yybtestsdk.module.ModuleManager;
 import com.tencent.tmgp.yybtestsdk.module.YSDKDemoFunction;
 import com.tencent.ysdk.api.YSDKApi;
 import com.tencent.ysdk.framework.common.BaseRet;
@@ -49,13 +38,13 @@ public class YSDKDemoApi {
                 return PayDemoApi.execute(subType,extraParams);
             case IDemoApiType.TYPE_OTHERS:
                 return OthersDemoApi.execute(subType,extraParams);
-            case IDemoApiType.TYPE_SHARE:
-                return ShareDemoApi.execute(subType,extraParams);
-            case IDemoApiType.TYPE_INNER_TEST:
-            case IDemoApiType.TYPE_ICON:
-                return IconDemoApi.execute(subType,extraParams);
-            case IDemoApiType.TYPE_LAUNCH_GIFT:
-                return LaunchGiftDemoApi.execute(subType,extraParams);
+//            case IDemoApiType.TYPE_SHARE:
+//                return ShareDemoApi.execute(subType,extraParams);
+//            case IDemoApiType.TYPE_INNER_TEST:
+//            case IDemoApiType.TYPE_ICON:
+//                return IconDemoApi.execute(subType,extraParams);
+//            case IDemoApiType.TYPE_LAUNCH_GIFT:
+//                return LaunchGiftDemoApi.execute(subType,extraParams);
             case IDemoApiType.TYPE_MODULE_INVOKE:
                 return ModuleInvokeHelper.execute(subType);
             default:
