@@ -18,13 +18,22 @@ public class Hook : MonoBehaviour
         jo.Call("Init");
     }
 
-    public void Login()
+    public void LoginQQ()
     {
-        Debug.Log("Click Login..");
+        Debug.Log("Click LoginQQ..");
 
         AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
-        jo.Call("Login");
+        jo.Call("Login", 1);
+    }
+
+    public void LoginWX()
+    {
+        Debug.Log("Click LoginWX..");
+
+        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
+        jo.Call("Login", 2);
     }
 
     public void Logout()
