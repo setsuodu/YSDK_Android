@@ -125,11 +125,15 @@ public class MainActivity extends UnityPlayerActivity {
         Pay();
     }
 
-    public void Login() {
-        System.out.println("UnityPlayerActivity Login");
+    public void Login(int platform) {
+        System.out.println("UnityPlayerActivity Login: " + platform);
         UnityPlayer.UnitySendMessage("Hook", "NativeCallback", "Login");
 
-        loginByType(ePlatform.WX);
+        if (platform == 1) {
+            loginByType(ePlatform.QQ);
+        } else if (platform == 2) {
+            loginByType(ePlatform.WX);
+        }
 //        Toast.makeText(MainActivity.this,"登录", Toast.LENGTH_SHORT).show();
     }
 
