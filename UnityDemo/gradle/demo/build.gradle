@@ -9,7 +9,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.0'
-}
+    }
 }
 
 allprojects {
@@ -27,7 +27,8 @@ apply plugin: 'com.android.application'
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
 android {
@@ -70,6 +71,16 @@ android {
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
             signingConfig signingConfigs.debug
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('./debug.keystore')
+        }
+
+        create("allRelease") {
+            storeFile file('./debug.keystore')
         }
     }
 
