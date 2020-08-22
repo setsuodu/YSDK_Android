@@ -27,8 +27,10 @@ apply plugin: 'com.android.application'
 
 
 dependencies {
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(name: 'YSDK_Android_1.6.3_3d3ad87', ext:'aar')
 }
 
 android {
