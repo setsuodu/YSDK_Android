@@ -75,11 +75,11 @@ android {
 	
     signingConfigs {
         debug {
-            storeFile file('./debug.keystore')
+            storeFile file('./src/main/assets/debug.keystore')
         }
 
         create("allRelease") {
-            storeFile file('./debug.keystore')
+            storeFile file('./src/main/assets/debug.keystore')
         }
     }**PACKAGING_OPTIONS****SPLITS**
 **BUILT_APK_LOCATION**
