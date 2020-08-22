@@ -9,7 +9,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.0'
-}
+**BUILD_SCRIPT_DEPS**}
 }
 
 allprojects {
@@ -24,17 +24,16 @@ allprojects {
 }
 
 apply plugin: 'com.android.application'
-
+**APPLY_PLUGINS**
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation(name: 'YSDK_Android_1.6.3_3d3ad87', ext:'aar')
-}
+**DEPS**}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.3'
+    compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -42,14 +41,14 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-        applicationId 'com.tencent.tmgp.yybtestsdk'
+        minSdkVersion **MINSDKVERSION**
+        targetSdkVersion **TARGETSDKVERSION**
+        applicationId '**APPLICATIONID**'
         ndk {
-            abiFilters 'armeabi-v7a', 'x86'
+            abiFilters **ABIFILTERS**
         }
-        versionCode 1
-        versionName '0.1'
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
     }
 
     lintOptions {
@@ -57,21 +56,20 @@ android {
     }
 
     aaptOptions {
-        noCompress = ['.unity3d', '.ress', '.resource', '.obb']
-    }
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb'**STREAMING_ASSETS**]
+    }**SIGN**
 
     buildTypes {
         debug {
-            minifyEnabled false
-            useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            minifyEnabled **MINIFY_DEBUG**
+            useProguard **PROGUARD_DEBUG**
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD**
             jniDebuggable true
         }
         release {
-            minifyEnabled false
-            useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
-            signingConfig signingConfigs.debug
+            minifyEnabled **MINIFY_RELEASE**
+            useProguard **PROGUARD_RELEASE**
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD****SIGNCONFIG**
         }
     }
 	
@@ -83,13 +81,8 @@ android {
         create("allRelease") {
             storeFile file('./debug.keystore')
         }
-    }
-
-    packagingOptions {
-        doNotStrip '*/armeabi-v7a/*.so'
-        doNotStrip '*/x86/*.so'
-    }
-
+    }**PACKAGING_OPTIONS****SPLITS**
+**BUILT_APK_LOCATION**
     bundle {
         language {
             enableSplit = false
@@ -101,4 +94,4 @@ android {
             enableSplit = true
         }
     }
-}
+}**SPLITS_VERSION_CODE****REPOSITORIES****SOURCE_BUILD_SETUP**
